@@ -1,6 +1,6 @@
 ---
-name: scnet-ocr
-description: 将图片中的文字、身份证、银行卡、营业执照、发票等信息识别并提取出来。本技能应在用户需要 OCR 识别图片中的文字，或识别身份证、银行卡、营业执照、增值税发票、出租车票、火车票、航空行程单、机动车销售统一发票时使用。
+name: car_sales_invoice_ocr
+description: 支持从机动车销售发票中精准提取车架号（VIN码）、发动机号、厂牌型号、购车人信息、价税合计金额、完税凭证号等车辆专属字段。
 version: 1.0.0
 author: SCNet
 license: MIT
@@ -63,7 +63,7 @@ Token 过期后调用会返回 401 或 403 错误。更新方法：重新申请 
 
 | 参数名 | 类型 | 必填 | 描述 |
 |--------|------|------|------|
-| ocrType | string | 是 | 识别类型枚举。必须为以下之一：<br>• GENERAL（通用文字）<br>• ID_CARD（大陆身份证）<br>• BANK_CARD（银行卡）<br>• BUSINESS_LICENSE（营业执照）<br>• VAT_INVOICE（增值税发票）<br>• VAT_ROLL_INVOICE（增值税卷票）<br>• TAXI_INVOICE（出租车发票）<br>• TRAIN_TICKET（火车票）<br>• AIRPORT_TICKET（航空运输电子客票行程单）<br>• VEHICLE_SALE_INVOICE（机动车销售统一发票） |
+| ocrType | string | 是 | 识别类型枚举。必须为以下之一：<br>• VEHICLE_SALE_INVOICE（机动车销售统一发票） |
 | filePath | string | 是 | 待识别图片的本地绝对路径。支持 jpg、png、pdf 等常见格式。 |
 
 ### 命令行调用示例
